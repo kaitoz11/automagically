@@ -28,9 +28,9 @@ jobs:
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
 
       - name: Commit and push changes
-        run: |
-          git add result/
-          git commit -m "Update result from CLI tool"
-          git push origin result
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          # Optional. Commit message for the created commit.
+          # Defaults to "Apply automatic changes"
+          commit_message: Automated Change
+          
