@@ -18,8 +18,8 @@ jobs:
       - name: Run CLI tool
         run: |
           # Replace 'your-cli-tool' with the actual command to run your CLI tool
-          uname -a > result/output.txt
           mkdir -p result
+          uname -a > output.txt
           mv output.txt result/output.txt
 
       - name: Configure git
