@@ -3,7 +3,7 @@ name: Run CLI and Commit Result
 on:
   push:
     branches:
-      - main  # Adjust this to the branch you want to trigger the action
+      - main
 
 jobs:
   run-cli-and-commit:
@@ -34,7 +34,5 @@ jobs:
       - name: Commit and push changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          # Optional. Commit message for the created commit.
-          # Defaults to "Apply automatic changes"
           commit_message: Automated Changes
 
