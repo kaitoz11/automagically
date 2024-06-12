@@ -1,0 +1,36 @@
+name: Run CLI and Commit Result
+
+on:
+  push:
+    branches:
+      - main  # Adjust this to the branch you want to trigger the action
+
+jobs:
+  run-cli-and-commit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v3
+        with:
+          ref: result
+
+      - name: Run CLI tool
+        run: |
+          # Replace 'your-cli-tool' with the actual command to run your CLI tool
+          uname -a > result/output.txt
+          mkdir -p result
+          mv output.txt result/output.txt
+
+      - name: Configure git
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+
+      - name: Commit and push changes
+        run: |
+          git add result/
+          git commit -m "Update result from CLI tool"
+          git push origin `echo $GITHUB_REF | sed 's/refs\/heads\//refs\/heads\/result-/'`
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
