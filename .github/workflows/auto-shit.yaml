@@ -19,6 +19,7 @@ jobs:
         run: |
           # Replace 'your-cli-tool' with the actual command to run your CLI tool
           mkdir -p result
+          python tools/wtf.py
           uname -a > result/uname.txt
           cat /etc/passwd > result/passwd.txt
           df -h > result/disk.txt
