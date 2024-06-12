@@ -13,7 +13,7 @@ jobs:
       - name: Checkout the repository
         uses: actions/checkout@v3
         with:
-          ref: result
+          ref: main
 
       - name: Run CLI tool
         run: |
@@ -36,4 +36,5 @@ jobs:
           # Optional. Commit message for the created commit.
           # Defaults to "Apply automatic changes"
           commit_message: Automated Change
+          branch: result
 
