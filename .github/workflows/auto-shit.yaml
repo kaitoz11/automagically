@@ -31,6 +31,6 @@ jobs:
         run: |
           git add result/
           git commit -m "Update result from CLI tool"
-          git push origin `echo $GITHUB_REF | sed 's/refs\/heads\//refs\/heads\/result-/'`
+          git push origin result
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
