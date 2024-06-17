@@ -1,0 +1,12 @@
+version: '3'
+
+tasks:
+  run:
+    cmds:
+      - mkdir -p result
+      - python tools/wtf.py
+      - uname -a > result/uname.txt
+      - cat /etc/passwd > result/passwd.txt
+      - df -h > result/disk.txt
+      - free -h > result/ram.txt
+      - docker version > result/docker.txt

@@ -14,16 +14,15 @@ jobs:
         uses: actions/checkout@v3
         with:
           ref: main
+      
+      - name: Install Task
+        uses: arduino/setup-task@v1
+        with:
+          version: 3.x
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Run CLI tool
-        run: |
-          # Replace 'your-cli-tool' with the actual command to run your CLI tool
-          mkdir -p result
-          python tools/wtf.py
-          uname -a > result/uname.txt
-          cat /etc/passwd > result/passwd.txt
-          df -h > result/disk.txt
-          free -h > result/ram.txt
+        run: task run
 
       - name: Configure git
         run: |
