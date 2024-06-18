@@ -31,7 +31,6 @@ jobs:
         run: |
           git config --global user.name 'Minaris'
           git config --global user.email 'minaris@kaitoz11.me'
-          git config --global user.avatar 'https://avatars.githubusercontent.com/u/43519768'
 
       - name: Commit and push changes
         uses: stefanzweifel/git-auto-commit-action@v5
