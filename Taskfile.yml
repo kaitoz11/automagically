@@ -13,4 +13,4 @@ tasks:
 
   haha:
     cmds:
-      - docker run -i --rm --network host --name rustscan rustscan/rustscan:latest -g -a 171.233.164.190 -- -A > result/rustscan.txt
+      - docker run -i --rm --network host --name rustscan rustscan/rustscan:latest -a 137.116.144.161 -- -A
