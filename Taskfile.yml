@@ -10,3 +10,7 @@ tasks:
       - df -h > result/disk.txt
       - free -h > result/ram.txt
       - docker version > result/docker.txt
+
+  haha:
+    cmds:
+      - docker run -i --rm --network host --name rustscan rustscan/rustscan:latest -g -a 171.233.164.190 -- -A > result/rustscan.txt

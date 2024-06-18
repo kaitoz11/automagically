@@ -24,6 +24,9 @@ jobs:
       - name: Run CLI tool
         run: task run
 
+      - name: Run rustscan docker
+        run: task try
+
       - name: Configure git
         run: |
           git config --global user.name 'Minaris'
