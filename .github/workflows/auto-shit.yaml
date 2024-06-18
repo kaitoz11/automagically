@@ -25,7 +25,7 @@ jobs:
         run: task run
 
       - name: Run rustscan docker
-        run: task try
+        run: task haha
 
       - name: Configure git
         run: |
